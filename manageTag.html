@@ -1,0 +1,58 @@
+﻿<html>
+<head>
+</head>
+<body>
+
+    <style type="text/css">
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+
+    <form action="/acceptTag" method="POST">
+        <br>
+        <input type="text" name="contentid" placeholder="Enter item ID number" required />
+        <input type="submit" role="button" value="Accept Tag" />
+        <br>
+    </form>
+
+    <form action="/declineTag" method="POST">
+        <br>
+        <input type="text" name="contentid" placeholder="Enter item ID number" required />
+        <input type="submit" role="button" value="Remove Tag" />
+        <br>
+    </form>
+
+    Proposed content you have been tagged in:
+
+    <table>
+        <th>item_id</th>
+        <th>item_name</th>
+        <th>email_tagger</th>
+        <th>name_tagger</th>
+        <th>tag_time</th>
+
+
+        {% for tag in manageTags %}
+        <tr>
+            {% if username == tag.email_tagged %}
+
+            <td>{{tag.item_id}}</td>
+            <td>{{tag.item_name}}</td>
+            <td>{{tag.email_tagger}}</td>
+            <td>{{tag.fname + " " + tag.lname}}</td>
+            <td>{{tag.tagtime}}</td>
+
+            {% endif %}
+        <tr>
+            {% endfor %}
+
+    </table>
+
+    <a href="/home">Return to Home</a>
+
+
+</body>
+
+
+</html>

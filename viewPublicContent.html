@@ -1,0 +1,38 @@
+﻿<html>
+<head>
+</head>
+<body>
+
+    <style type="text/css">
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+
+    Here are public posts from the last 24 hours:
+
+    <table>
+        <th>item_id</th>
+        <th>email_post</th>
+        <th>post_time</th>
+        <th>file_path</th>
+        <th>item_name</th>
+
+        {% for line in posts %}
+        <tr>
+            <td>{{line.item_id}}</td>
+            <td>{{line.email_post}}</td>
+            <td>{{line.post_time}}</td>
+            <td>{{line.file_path}}</td>
+            <td>{{line.item_name}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/">Go back</a>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,31 @@
+﻿<html>
+<head>
+</head>
+<body>
+
+    Which friendgroup would you like to access?
+
+    <form action="/defriend" method="POST">
+        <br>
+        <input type="text" name="select_group" placeholder="Friendgroup you own" required /> <br>
+        <br>
+        Name the person you want to remove from your friendgroup:
+        <br>
+        <input type="text" class="form-control" name="fistname" placeholder="First name" required />
+        <input type="text" class="form-control" name="lastname" placeholder="Last name" required />
+        <br>
+        <br>
+        <input type="submit" value="Defriend!" />
+        {% if error %}
+        <p class="error"><strong>Error:</strong> {{error}}</p>
+        {% endif %}
+    </form>
+
+    <a href="/home">Home</a>
+    <br>
+    <a href="/logout">Logout</a>
+
+</body>
+
+
+</html>

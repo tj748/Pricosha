@@ -1,0 +1,35 @@
+﻿<html>
+<head>
+</head>
+<body>
+
+    Which friendgroup would you like to access?
+
+    <form action="/addFriend" method="POST">
+
+        <input type="text" name="group" placeholder="Friendgroup you own" required /> <br>
+        <br>
+        Add a Member:
+        <br>
+        <input type="text" name="first_name" placeholder="Member first name" required />
+        <input type="text" name="last_name" placeholder="Member last name" required />
+        <br>
+        <br>
+        <input type="submit" value="Add friend!" />
+        {% if error %}
+        <p class="error"><strong>Error:</strong> {{error}}</p>
+        {% endif %}
+
+        <br>
+        <br>
+    </form>
+
+    <a href="/home">Home</a>
+    <br>
+    <a href="/logout">Logout</a>
+
+</body>
+
+
+</html>
+

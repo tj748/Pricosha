@@ -1,0 +1,51 @@
+<html>
+<head>
+</head>
+<body>
+
+    <style type="text/css">
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+
+    Here is what is visible to you:
+
+    <table>
+        <th>item_id</th>
+        <th>email_post</th>
+        <th>post_time</th>
+        <th>file_path</th>
+        <th>item_name</th>
+        <th>tagged</th>
+        <th>ratings</th>
+
+        {% for line in posts %}
+        <tr>
+            <td>{{line.item_id}}</td>
+            <td>{{line.email_post}}</td>
+            <td>{{line.post_time}}</td>
+            <td>{{line.file_path}}</td>
+            <td>{{line.item_name}}</td>
+            <td>{% for tag in tags %} {% if line.item_id == tag.item_id %} {{tag.fname + " " + tag.lname}} {% endif %} {%endfor%}</td>
+            <td>{% for rate in rates %} {% if line.item_id == rate.contentitemitem_id %} {{rate.emoji}} {% endif %} {%endfor%}</td>
+            {% endfor %}
+    </table>
+    <a href="/postContentItem">Post</a>
+    <br>
+    <a href="/manageTag">Manage Tags</a>
+    <br>
+    <a href="/addFriend">Add a Friend</a>
+    <br>
+    <a href="/defriend">Defriend</a>
+    <br>
+    <a href="/logout">Logout</a>
+    <br>
+    <a href="/comment">Comment</a>
+    <br>
+    <a href="/tagcontentitem">Tag Content</a>
+
+</body>
+
+
+</html>

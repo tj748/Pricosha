@@ -1,0 +1,35 @@
+﻿<html>
+<head>
+</head>
+<body>
+
+    <style type="text/css">
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+
+    Here are the comments on the posted content:
+
+    <table>
+        <th>email</th>
+        <th>item_id</th>
+        <th>comment</th>
+
+        {% for line in posts %}
+        <tr>
+            <td>{{line.emailitem_id}}</td>
+            <td>{{line.item_id}}</td>
+            <td>{{line.comment}}</td>
+
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/">Go back</a>
+
+
+</body>
+
+
+</html>
